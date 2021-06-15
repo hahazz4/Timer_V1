@@ -1,0 +1,71 @@
+#include <iostream>
+#include <stdlib.h>
+#include <windows.h>
+#include <unistd.h>
+using namespace std; //Did this here to avoid typing std, everytime for outputting or running a command.
+int main() {
+    int hr,min,sec;
+    hr = 0; min = 0; sec = 0;
+
+    //This entire loop will run infinitely until the while condition is not met.
+    do
+    {
+        cout<<hr<<" : "<<min<<" : "<<sec<<endl;
+
+        if (hr > 9 && min > 9 && sec > 9)
+        {
+            cout<<"hours "<<"minutes "<<"seconds"<<endl;
+        }
+
+        else
+        {
+            if (hr > 9 && min > 9)
+            {
+                cout<<"hours "<<"minutes "<<"second"<<endl;
+            }
+
+            else if (hr > 9 && sec > 9)
+            {
+                cout<<"hours "<<"minute "<<"seconds"<<endl;
+            }
+
+            else if (min > 9 && sec > 9)
+            {
+                cout<<"hour "<<"minutes "<<"seconds"<<endl;
+            }
+
+            else
+            {
+                if (sec > 9)
+                    cout<<"hour "<<"minute "<<"seconds"<<endl;
+
+                else if (min > 9)
+                    cout<<"hour "<<"minutes "<<"second"<<endl;
+
+                else if (hr > 9)
+                    cout<<"hours "<<"minute "<<"second"<<endl;
+
+                else
+                    cout<<"hour "<<"minute "<<"second"<<endl;
+            }
+        }
+        sec++;
+
+        //Everytime 60 seconds occur, a minute is added, and the seconds reset back to 0.
+        if(sec==60)
+        {
+            min++;
+            sec=0;
+
+            //Everytime 60 minutes occur, a hour is added, and the minutes reset back to 0.
+            if(min==60)
+            {
+                hr++;
+                min=0;
+            }
+        }
+        //This pauses the infinite loop by 1 second each iteration.
+        sleep(1);
+    }
+    while (true);
+}
