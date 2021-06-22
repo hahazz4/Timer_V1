@@ -1,8 +1,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include <windows.h>
-#include <unistd.h> //Includes sleep() function.
-using namespace std;
+#include <unistd.h>
+using namespace std; //Did this here to avoid typing std, everytime for outputting or running a command.
 int main() {
     int hr,min,sec;
     hr = 0; min = 0; sec = 0;
@@ -10,21 +10,22 @@ int main() {
     //This entire loop will run infinitely until the while condition is not met.
     do
     {
+        cout<<"\n"<<endl;
         cout<<hr<<" : "<<min<<" : "<<sec<<endl;
 
-        if (hr > 9 && min > 9 && sec > 9)
+        if (hr > 1 && min > 9 && sec > 9)
         {
             cout<<"hours "<<"minutes "<<"seconds"<<endl;
         }
 
         else
         {
-            if (hr > 9 && min > 9)
+            if (hr > 1 && min > 9)
             {
                 cout<<"hours "<<"minutes "<<"second"<<endl;
             }
 
-            else if (hr > 9 && sec > 9)
+            else if (hr > 1 && sec > 9)
             {
                 cout<<"hours "<<"minute "<<"seconds"<<endl;
             }
@@ -42,7 +43,7 @@ int main() {
                 else if (min > 9)
                     cout<<"hour "<<"minutes "<<"second"<<endl;
 
-                else if (hr > 9)
+                else if (hr > 1)
                     cout<<"hours "<<"minute "<<"second"<<endl;
 
                 else
